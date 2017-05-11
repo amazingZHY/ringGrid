@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>ringGrid</title>
+    <link type="text/css" rel="stylesheet" href="css/ringGrid.css">
+    <script src="js/jquery.js"></script>
+    <script src="js/ringGrid.js"></script>
+</head>
+<body>
+<div class="barPie barPie--radio">
+    <div class="barPie__value">
+        <ul>
+            <li><span class="safe"></span><span>不告警</span></li>
+            <li><span class="warning"></span><span>告警</span></li>
+        </ul>
+    </div>
+    <div id="barPie" class="barPie__ring">
+        <div class="barPie__ring__item"><span class="barPie__ring_label">00~</span></div>
+        <div class="barPie__ring__item"><span class="barPie__ring_label">01~</span></div>
+        <div class="barPie__ring__item"><span class="barPie__ring_label">02~</span></div>
+        <div class="barPie__ring__item"><span class="barPie__ring_label">03~</span></div>
+        <div class="barPie__ring__item"><span class="barPie__ring_label">04~</span></div>
+        <div class="barPie__ring__item"><span class="barPie__ring_label">05~</span></div>
+        <div class="barPie__ring__item"><span class="barPie__ring_label">06~</span></div>
+        <div class="barPie__ring__item"><span class="barPie__ring_label">07~</span></div>
+        <div class="barPie__ring__item"><span class="barPie__ring_label">08~</span></div>
+        <div class="barPie__ring__item"><span class="barPie__ring_label">09~</span></div>
+        <div class="barPie__ring__item"><span class="barPie__ring_label">10~</span></div>
+        <div class="barPie__ring__item"><span class="barPie__ring_label">11~</span></div>
+        <div class="barPie__ring__item"><span class="barPie__ring_label">12~</span></div>
+        <div class="barPie__ring__item"><span class="barPie__ring_label">13~</span></div>
+        <div class="barPie__ring__item"><span class="barPie__ring_label">14~</span></div>
+        <div class="barPie__ring__item"><span class="barPie__ring_label">15~</span></div>
+        <div class="barPie__ring__item"><span class="barPie__ring_label">16~</span></div>
+        <div class="barPie__ring__item"><span class="barPie__ring_label">17~</span></div>
+        <div class="barPie__ring__item"><span class="barPie__ring_label">18~</span></div>
+        <div class="barPie__ring__item"><span class="barPie__ring_label">19~</span></div>
+        <div class="barPie__ring__item"><span class="barPie__ring_label">20~</span></div>
+        <div class="barPie__ring__item"><span class="barPie__ring_label">21~</span></div>
+        <div class="barPie__ring__item"><span class="barPie__ring_label">23~</span></div>
+        <div class="barPie__ring__item"><span class="barPie__ring_label">22~</span></div>
+        </div>
+    </div>
+    <button id="check">查看选中</button>
+    <script>
+        $(function(){
+            $("#check").click(function(){
+                var str = "",
+                    items = $(".barPie__ring__item");
+                for(var i = 0,len = items.length; i < len; i++){
+                    if($(items[i]).hasClass("change")){
+                        str += "1";
+                    }else{
+                        str += "0";
+                    }
+                }
+                alert(str);
+            });
+        });
+    </script>
+</body>
+</html>
